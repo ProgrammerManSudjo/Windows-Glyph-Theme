@@ -1,0 +1,965 @@
+* {
+    font-size: 13px;
+    color: #f1f1f1;
+    font-weight: 600;
+    font-family: "Segoe UI", "JetBrainsMono NFP";
+    margin: 0;
+    padding: 0;
+}
+
+.yasb-bar {
+    /* MAIN YASB BAR */
+    padding: 2 2 2 2;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border: 1px solid #303030;
+}
+
+.yasb-bar.dark {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.yasb-bar .label {
+    color: #f1f1f1;
+}
+
+.yasb-bar.dark .label {
+    color: #f1f1f1;
+}
+
+/* WIDGET GROUP */
+.container-left .container-right {
+    flex: 0 1 auto;
+}
+
+.container-center {
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* GLOBAL WIDGET */
+.widget {
+    padding: 0 8px;
+    margin: 0;
+}
+
+.widget .label {
+    padding: 0px 2px 2px 2px;
+    font-family: "JetBrainsMono NFP";
+}
+
+.widget .label.alt {
+    padding: 1px 8px 1px 8px;
+}
+
+/* DATE CLOCK WIDGET */
+/* ---------------------------------- */
+/* DATE AND CLOCK WIDGET STYLING */
+/* Styles specific to the clock and calendar widget components. */
+/* ---------------------------------- */
+.clock-widget {
+    font-family: "ProFontWindows Nerd Font";
+    margin: 5px 5px 5px 5px;
+    padding: 0; /* was widgets.clock.options.container_padding */
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0px;
+    border: 1px solid #5a5a5a;
+}
+
+.clock-widget .label {
+    font-family: "JetBrainsMono NFP";
+    font-size: 12px;
+    font-weight: 400;
+    padding-top: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-shadow: none; /* was widgets.clock.options.label_shadow (disabled) */
+}
+
+.clock-widget .label:hover {
+    color: #ffffff;
+}
+
+.calendar {
+    background-color: rgba(0, 0, 0, 155);
+    border: 1px solid #5a5a5a;
+}
+
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: rgba(100, 100, 100, 0);
+    color: rgba(200, 200, 200, 0.6);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.calendar .calendar-table::item:selected {
+    color: rgb(255, 255, 255);
+}
+
+.calendar .day-label {
+    margin-top: 20px;
+}
+
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.calendar .month-label {
+    font-weight: normal;
+}
+
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    margin-top: -20px;
+}
+
+/* ACTIVE LAYOUT WIDGET */
+/* ---------------------------------- */
+/* KOMOREBI ACTIVE LAYOUT WIDGET STYLING */
+/* Styles for the widget displaying the current active layout name and icon. */
+/* ---------------------------------- */
+.komorebi-active-layout {
+    margin: 5px 5px 5px 5px;
+    padding-right: 3px;
+    padding-left: 3px;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #5a5a5a;
+}
+
+.komorebi-active-layout .label {
+    font-family: "JetBrainsMono NFP";
+    font-size: 16px;
+    font-weight: 400;
+    text-shadow: none; /* was widgets.komorebi_active_layout.options.label_shadow (disabled) */
+}
+
+.komorebi-active-layout .label:hover {
+    color: white;
+}
+
+/* KOMOREBI WORKSPACE WIDGET */
+/* ---------------------------------- */
+/* KOMOREBI WORKSPACE WIDGET STYLING */
+/* Styles for the widget showing available workspaces and switching buttons. */
+/* ---------------------------------- */
+.komorebi-workspaces {
+    padding-right: 10px;
+    padding-left: 10px; /* covers widgets.komorebi_workspaces.options.container_padding */
+    margin: 5px 5px 5px 5px;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #5a5a5a;
+}
+
+.komorebi-workspaces .ws-btn {
+    border-radius: 0px;
+    font-size: 12px;
+    font-weight: 600;
+    width: 24px;
+    height: 24px;
+    margin: 0 5px 0 5px;
+    color: rgba(100, 100, 100, 0);
+    background-color: #000000;
+    border: 1px solid #5a5a5a;
+    transition: all 200ms ease-in-out; /* was widgets.komorebi_workspaces.options.animation */
+}
+
+.komorebi-workspaces .ws-btn .icon {
+    padding-bottom: 5px;
+}
+
+.komorebi-workspaces .ws-btn:hover,
+.komorebi-workspaces .ws-btn.populated:hover {
+    background-color: #6a6a6a;
+}
+
+.komorebi-workspaces .ws-btn.populated {
+    background-color: #a9a9a9;
+    width: 28px;
+    color: rgb(0, 0, 0);
+    padding-bottom: 2px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: "SN Pro";
+}
+
+.komorebi-workspaces .ws-btn.active {
+    background-color: rgba(235, 235, 235, 1);
+    color: rgb(0, 0, 0);
+    width: 38px;
+    padding-bottom: 2px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: "SN Pro";
+}
+
+.active-window-widget .widget-container {
+    padding: 0 8 0 8;
+}
+
+.active-window-widget .icon {
+    padding: 0 0 0 0;
+}
+
+.active-window-widget .label {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "Inter";
+    transition: opacity 200ms ease-in-out; /* was widgets.active_window.options.animation (fadeInOut) */
+}
+
+/*POWER MENU WIDGET*/
+.uptime {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    font-family: "Segoe UI";
+    background-color: rgba(0, 0, 0, 150);
+    border: 1px solid #5a5a5a;
+    padding: 20;
+    border-radius: 0px;
+    margin-left: 750px;
+    margin-right: 750px;
+    margin-bottom: 240px;
+}
+
+.power-menu-widget {
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-right: 10px;
+    padding-left: 3px;
+    margin: 5px 10px 5px 5px;
+    font-size: 18px;
+    border: 1px solid #5a5a5a;
+}
+
+.power-menu-widget .label {
+    font-size: 18px;
+    padding-right: 6px;
+    padding-left: 13px;
+    font-family: "JetBrainsMono NFP";
+}
+
+.power-menu-widget .label:hover {
+    color: white;
+}
+
+.power-menu-popup {
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 255);
+    border: 1px solid #5a5a5a;
+}
+
+.power-menu-popup .button {
+    padding: 5;
+    width: 240px;
+    height: 180px;
+    border-radius: 0px;
+    background-color: rgba(100, 100, 100, 25);
+    font-family: "JetBrainsMono NFP";
+    color: white;
+    border: 1px solid #5a5a5a;
+    margin: 15px;
+}
+
+.power-menu-popup .button.hover {
+    background-color: rgba(50, 50, 50, 125);
+    width: 240px;
+    height: 180px;
+    border: 1px solid #5a5a5a;
+    margin: 15px;
+}
+
+.power-menu-popup .button .label {
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "JetBrainsMono NFP", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.power-menu-popup .button .icon {
+    font-size: 48px;
+    padding-top: 8px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.power-menu-popup .button.cancel .icon {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.power-menu-popup .button.hibernate .icon {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.power-menu-popup .button.restart .icon {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.power-menu-popup .button.cancel .label {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.power-menu-popup .button.shutdown .icon {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.power-menu-popup .button.shutdown .label {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ICONS */
+.icon {
+    font-size: 14px;
+    padding-right: 0;
+}
+
+/* ACTIVE WINDOW TITLE */
+/* ---------------------------------- */
+/* ACTIVE WINDOW TITLE WIDGET STYLING */
+/* Styles for displaying the title of the currently active window. */
+/* ---------------------------------- */
+.active-window-widget {
+    padding-right: 5px;
+    padding-left: 5px;
+    margin: 5px 10px 5px 10px;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #5a5a5a;
+}
+
+.active-window-widget .widget-container .label:hover {
+    color: white;
+}
+
+/* ---------------------------------- */
+/* WHKD (WINDOWS HOTKEY) WIDGET STYLING */
+/* Styles for the widget displaying hotkey information and keybind popups. */
+/* ---------------------------------- */
+.whkd-widget {
+    margin: 5px 5px 5px 5px;
+    padding-right: 18px;
+    padding-left: 15px;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #5a5a5a;
+}
+
+.whkd-widget .icon {
+    font-size: 16px;
+    padding: 0px 0px 0px 0px;
+    font-weight: 400;
+    text-shadow: none; /* was widgets.whkd.options.label_shadow (disabled) */
+}
+
+.whkd-popup .edit-config-button {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 4px 8px 6px 8px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 0px;
+    border: 1px solid #5a5a5a;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.whkd-popup .keybind-buttons-container {
+    min-width: 240px;
+}
+
+.whkd-popup .keybind-button {
+    background-color: #000000;
+    color: white;
+    padding: 4px 8px 6px 8px;
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid #5a5a5a;
+    border-radius: 0px;
+    font-family: "JetBrainsMono NFP";
+}
+
+.whkd-popup .keybind-button.special {
+    background-color: #000000;
+}
+
+.whkd-popup .keybind-row:hover {
+    background-color: rgba(0, 0, 0, 0.755);
+    border-radius: 0px;
+}
+
+.whkd-popup .plus-separator {
+    padding: 0 0px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.whkd-popup .filter-input {
+    padding: 0 8px 2px 8px;
+    font-size: 14px;
+    font-family: "Segoe UI", sans-serif;
+    border: 1px solid #5a5a5a;
+    border-radius: 0px;
+    outline: none;
+    color: white;
+    background-color: #000000;
+    min-height: 32px;
+}
+
+.whkd-popup .filter-input:focus {
+    border: 1px solid #ffffff;
+}
+
+.whkd-popup .keybind-command {
+    font-size: 13px;
+}
+
+.whkd-popup .keybind-header {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    padding: 12px 8px;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #5a5a5a;
+    border-radius: 0px;
+}
+
+/* ---------------------------------- */
+/* SYSTEM TRAY ICON WIDGET STYLING */
+/* Styles for the system tray icon and its associated pinned items. */
+/* ---------------------------------- */
+.systray {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 8px 13px 8px 13px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 0px;
+    border: 1px solid #5a5a5a;
+}
+
+.systray .unpinned-container {
+    background: transparent;
+    border-radius: 0px;
+}
+
+.systray .pinned-container {
+    border-radius: 0px;
+}
+
+.systray .pinned-container[forceshow="true"] {
+    background: transparent;
+}
+
+.systray .button {
+    border-radius: 0px;
+    padding: 8px 5px 8px 5px;
+    margin: 0 5px 0 5px;
+    background-color: #000000;
+    border: 1px solid #5a5a5a;
+    font-family: JetBrainsMono NFP;
+}
+
+.systray .button:hover {
+    background-color: #6a6a6a;
+}
+
+.systray .button[dragging="true"] {
+    background: #000000;
+    border-color: #5a5a5a;
+}
+
+.systray .unpinned-visibility-btn {
+    border-radius: 0px;
+    height: 20px;
+    width: 16px;
+    border: 1px solid #5a5a5a;
+}
+
+.systray .unpinned-visibility-btn:checked {
+    background: transparent;
+}
+
+.systray .unpinned-visibility-btn:hover {
+    border-radius: 0px;
+    border-color: #5a5a5a;
+}
+
+/* ---------------------------------- */
+/* KOMOREBI CONTROL WIDGET STYLING */
+/* Styles for widgets related to Komorebi window manager control (start, stop, reload). */
+/* ---------------------------------- */
+.komorebi-control-widget {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 5 5 5 10;
+    border-radius: 0px;
+    border: 1px solid #5a5a5a;
+}
+
+.komorebi-control-widget .label {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 400;
+    padding-left: 8;
+    padding-right: 8;
+    transition: opacity 300ms ease-in-out; /* was widgets.komorebi_control.options.animation (fadeInOut) */
+}
+
+.komorebi-control-menu {
+    background-color: rgba(0, 0, 0, 155);
+    border: 1px solid #5a5a5a;
+}
+
+.komorebi-control-widget .label:hover {
+    color: white;
+}
+
+.komorebi-control-menu .button {
+    color: rgba(255, 255, 255, 1);
+    padding: 8px 16px;
+    font-size: 32px;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #5a5a5a;
+}
+
+.komorebi-control-menu .button.active {
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.komorebi-control-menu .button:disabled,
+.komorebi-control-menu .button.active:disabled {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.komorebi-control-menu .footer .text {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+/* ---------------------------------- */
+/* POMODORO TIMER WIDGET STYLING */
+/* Styles for the Pomodoro timer widget and its associated menu elements. */
+/* ---------------------------------- */
+.pomodoro-widget {
+    padding: 2px; /* covers widgets.pomodoro.options.container_padding */
+    margin: 5px 5px 5px 5px;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #5a5a5a;
+}
+
+.pomodoro-widget .icon {
+    font-size: 14px;
+    padding-right: 4px;
+}
+
+.pomodoro-widget .label.paused,
+.pomodoro-widget .icon.paused {
+    color: #7d7e8b;
+    font-weight: 400;
+    font-size: 13px;
+    text-shadow: none; /* was widgets.pomodoro.options.label_shadow (disabled) */
+}
+
+.pomodoro-widget .label.work,
+.pomodoro-widget .icon.work {
+    color: #cecfd1;
+    font-weight: 400;
+    font-size: 13px;
+    text-shadow: none;
+}
+
+.pomodoro-widget .label.break,
+.pomodoro-widget .icon.break {
+    color: #89b4fa;
+    font-weight: 400;
+    font-size: 13px;
+    text-shadow: none;
+}
+
+/* Pomodoro menu styling */
+.pomodoro-menu {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0px;
+    border: 1px solid #5a5a5a;
+}
+
+.pomodoro-menu .header {
+    font-size: 16px;
+    font-weight: 400;
+    max-height: 0px;
+    color: #ffffff;
+}
+
+.pomodoro-menu .status {
+    font-size: 18px;
+    font-weight: 400;
+    color: #cecfd1;
+}
+
+.pomodoro-menu .session {
+    font-size: 12px;
+    color: #cecfd1;
+}
+
+.pomodoro-menu .button {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #cecfd1;
+    border: 1px solid #5a5a5a;
+    border-radius: 0px;
+    padding: 6px 12px;
+}
+
+.pomodoro-menu .button.start {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pomodoro-menu .button.reset {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pomodoro-menu .button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pomodoro-menu .button.pause {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #cecfd1;
+}
+
+.pomodoro-menu .button:pressed {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.komorebi-layout-menu {
+    border: 1px solid #5a5a5a;
+    background-color: rgba(0, 0, 0, 155);
+}
+
+.komorebi-layout-menu .menu-item {
+    padding: 8px 16px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 900;
+}
+
+.komorebi-layout-menu .menu-item-icon {
+    color: #cecfd1;
+    font-size: 16px;
+}
+
+.komorebi-layout-menu .menu-item-text {
+    font-family: "Segoe UI";
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.komorebi-layout-menu .menu-item:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+.komorebi-layout-menu .separator {
+    max-height: 1px;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* ---------------------------------- */
+/* NOTES WIDGET STYLING */
+/* Styles for the widget displaying quick notes and its associated menu. */
+/* ---------------------------------- */
+.notes-widget {
+    margin: 5px 5px 5px 5px;
+    padding: 0; /* covers widgets.notes.options.container_padding */
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0px;
+    border: 1px solid #5a5a5a;
+}
+
+.notes-widget .label {
+    font-family: "JetBrainsMono NFP";
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 8 2 8;
+    text-shadow: none; /* was widgets.notes.options.label_shadow (disabled) */
+}
+
+.notes-widget .icon {
+    font-size: 13px;
+    color: #cecfd1;
+    padding: 0 3 3 3;
+}
+
+/* Notes Widget Menu */
+.notes-menu {
+    min-width: 400px;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 155);
+    border: 1px solid #5a5a5a;
+}
+
+.notes-menu .note-item {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+.notes-menu .note-item:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.notes-menu .note-item .icon {
+    font-size: 16px;
+    padding: 0 4px;
+}
+
+.notes-menu .copy-button {
+    color: #cecfd1;
+    background: transparent;
+    border: 1px solid #5a5a5a;
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 0px;
+}
+
+.notes-menu .delete-button {
+    color: #cecfd1;
+    background: transparent;
+    border: 1px solid #5a5a5a;
+    font-size: 18px;
+    padding: 7px 8px;
+    border-radius: 0px;
+}
+
+.notes-menu .delete-button:hover {
+    background-color: rgba(128, 128, 128, 0);
+}
+
+.notes-menu .note-item .title {
+    font-size: 13px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.notes-menu .note-item .date {
+    font-size: 12px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.notes-menu .empty-list {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #cccccc;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 10px 0 20px 0;
+}
+
+.notes-menu .add-button,
+.notes-menu .cancel-button {
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #5a5a5a;
+    border-radius: 0px;
+    color: white;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.notes-menu .cancel-button {
+    margin-left: 4px;
+}
+
+.notes-menu .add-button:hover,
+.notes-menu .cancel-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.notes-menu .scroll-area {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.notes-menu .note-input {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #5a5a5a;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    max-height: 30px;
+    padding: 4px;
+    border-radius: 0px;
+}
+
+.note-input:focus {
+    border: 1px solid #cecfd1;
+}
+
+/* ---------------------------------- */
+/* KOMOREBI STACK WIDGET */
+/* Styles for the Komorebi window stack widget. */
+/* ---------------------------------- */
+.komorebi-stack {
+    margin: 5 0 5 0;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #5a5a5a;
+    box-shadow: none; /* was widgets.komorebi_stack.options.container_shadow (disabled) */
+}
+
+.komorebi-stack .widget-container {
+    border-radius: 0px;
+}
+
+.komorebi-stack .window {
+    background-color: rgba(15, 15, 15, 255);
+    border-radius: 0px;
+    border: 1px solid #5a5a5a;
+    padding: 0 10 0 10;
+    margin: 5px 5px 5px 5px;
+    transition: background-color 200ms ease-in-out; /* was widgets.komorebi_stack.options.animation */
+    box-shadow: none; /* was widgets.komorebi_stack.options.btn_shadow (disabled) */
+}
+.komorebi-stack .window.active {
+    background-color: rgba(30, 30, 30, 255);
+    border-radius: 0px;
+    border: 1px solid #5a5a5a;
+    margin: 5px 5px 5px 5px;
+    padding: 0 10 0 10;
+}
+
+.komorebi-stack .window .label {
+    margin-top: 1px;
+    font-family: "Inter";
+    font-size: 12px;
+    font-weight: 400;
+    text-shadow: none; /* was widgets.komorebi_stack.options.label_shadow (disabled) */
+}
+
+.komorebi-stack .window.active .label {
+    margin-top: 1px;
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* ---------------------------------- */
+/* TOOLTIP  */
+/* Universal styling for tooltips and menu tooltips */
+/* ---------------------------------- */
+.tooltip {
+    background-color: rgba(0, 0, 0, 200);
+    border-radius: 0px;
+    border: 1px solid #5a5a5a;
+    color: rgba(255, 255, 255, 255);
+    padding: 6px 12px;
+    font-size: 12px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+/* ---------------------------------- */
+/* TASKBAR  */
+/* Style settings for taskbar, buttons and preview */
+/* ---------------------------------- */
+.taskbar-widget .widget-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px 5px 10px;
+    margin: 5px 0px 5px 0px;
+    border-radius: 0px;
+    border: 1px solid #5a5a5a;
+}
+.taskbar-widget .app-container {
+    margin: 1px 4px;
+    border-radius: 0px;
+    padding: 0 10px;
+    border: 1px solid #5a5a5a;
+}
+.taskbar-widget .app-container.foreground,
+.taskbar-widget .app-container.foreground:hover {
+    background-color: #ebebeb;
+}
+.taskbar-widget .app-container.flashing {
+    background-color: rgba(0, 0, 0, 100);
+}
+.taskbar-widget .app-container.running {
+    background-color: #000000;
+}
+.taskbar-widget .app-container:hover {
+    background-color: #6a6a6a;
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
+}
+/* Taskbar preview popup is very limited in styling options, do not use margins/paddings here */
+.taskbar-preview {
+    border-radius: 0px;
+    background-color: #000000;
+    border: 1px solid #5a5a5a;
+}
+.taskbar-preview.flashing {
+    background-color: #7f434a;
+}
+.taskbar-preview .header {
+    padding-bottom: 12px;
+    padding-top: 4px;
+}
+.taskbar-preview .header .title {
+    color: #d6d6d6;
+    font-family: "Segoe UI";
+    font-weight: 600;
+    font-size: 13px;
+}
+.taskbar-preview .close-button {
+    color: #999;
+    font-size: 20px;
+    background-color: transparent;
+    border: 1px solid #5a5a5a;
+    min-width: 20px;
+    border-radius: 0px;
+    min-height: 20px;
+}
+.taskbar-preview .close-button:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(30, 30, 30);
+}
+
+/* ---------------------------------- */
+/* MEDIA VISUALIZER - CAVA  */
+/* Visualizer settings, requires cava */
+/* ---------------------------------- */
+.cava-widget {
+    padding-right: 5px;
+    padding-left: 5px;
+    margin: 0;
+}
+.cava-widget .widget-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 0px;
+    border: 1px solid #5a5a5a;
+}

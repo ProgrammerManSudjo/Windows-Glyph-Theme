@@ -1,0 +1,3 @@
+radius: 0
+smallRadius: 0
+tooltipRadius: -1
